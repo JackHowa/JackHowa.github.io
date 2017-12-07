@@ -16,8 +16,9 @@
 
 <body>
   <nav>
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Logo</a>
+    <!-- https://material.io/guidelines/style/color.html#color-color-palette -->
+    <div class="nav-wrapper orange darken-1">
+      <a href="#!" class="brand-logo">JH</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse">
         <i class="material-icons">menu</i>
       </a>
@@ -59,6 +60,7 @@
   <script>
     $(document).ready(function () {
       $('select').material_select();
+      $(".button-collapse").sideNav();
     });
   </script>
 </body>
