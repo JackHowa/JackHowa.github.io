@@ -1,87 +1,129 @@
-
-<!doctype html>
-<html ⚡ lang="en-us">
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-    <meta name="description" content="Jack Howard is a full-stack software engineer in Chicago. He has more than two years experience in React and React Native, JavaScript, and web development. Jack has developed mobile and web apps for journalism organizations, banks and private equity companies, and startups in the transportation industry. He currently works at HAAS Alert.">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,minimum-scale=1,initial-scale=1"
+    />
+    <meta
+      name="description"
+      content="Jack Howard is a full-stack software engineer in Chicago. He has more than two years experience in React and React Native, JavaScript, and web development. Jack has developed mobile and web apps for journalism organizations, banks and private equity companies, and startups in the transportation industry. He currently works at HAAS Alert."
+    />
     <meta name="theme-color" content="#ffcfb8" />
-    <link rel="preconnect" href="https://cdn.ampproject.org">
-    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
-    <style amp-custom>
-        body {
-            background-color: #113134;
-            color: #fff;
-            padding: 0 20vw 0 20vw;
-            font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue",
+    <style>
+      body {
+        background-color: #113134;
+        color: #fff;
+        overscroll-behavior: none;
+        margin: 0;
+        padding: 0;
+        /* centering from middle looks strange with 100vh */
+        height: 90vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 20vw 0 20vw;
+        font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue",
           "Helvetica", "Arial", sans-serif;
+      }
+
+      @media (max-width: 800px) {
+        body {
+          padding: 0 10vw 0 10vw;
         }
+      }
 
-        @media (max-width: 800px) { 
-            body {
-                padding: 0 10vw 0 10vw;
-            }
-         }
+      h1 {
+        font-size: 4vmax;
+        margin: 0;
+      }
 
-         h1 {
-            padding-top: 20vh;
-            font-size: 4vmax;
-            margin: 0;
+      h2 {
+        padding-top: 0.5em;
+        font-size: 2vmax;
+        margin: 0;
+      }
+
+      a {
+        font-size: 2vmax;
+        color: #ffcfb8;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      #hr-container {
+        padding: 2em 0 2em 0;
+        margin: 0;
+      }
+
+      hr {
+        border: none;
+        border-bottom: 0.5px dashed #4a5568;
+        margin: 0;
+        padding: 0;
+      }
+
+      footer {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      /* update for mobile */
+      @media (max-width: 800px) {
+        h1 {
+          font-size: 6vmax;
         }
 
         h2 {
-            padding-top: 10vh;
-            font-size: 2vmax;
-            margin: 0;
-            padding-top: 1em;
+          font-size: 3vmax;
         }
 
         a {
-            font-size: 2vmax;
-            color: #ffcfb8;
-            text-decoration: none;
+          font-size: 3vmax;
         }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        hr {
-            border: none;
-            border-bottom: 0.5px dashed #4a5568;
-            margin: 2em auto;
-        }
-
-        footer {
-            display: flex;
-            justify-content: space-around;
-        }
+      }
     </style>
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-    <link rel="manifest" href="/manifest.json">
-    <link rel="canonical" href=".">
-    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="canonical" href="." />
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/favicon-16x16.png"
+    />
     <title>Jack Howard - Full Stack Dev</title>
   </head>
   <body>
     <header>
-    <h1>Jack Howard</h1>
+      <h1>Jack Howard</h1>
     </header>
     <main>
-        <h2>Software Engineer at The Washington Post</h2>
+      <h2>Software Engineer at The Washington Post</h2>
     </main>
-    <hr>
+    <div id="hr-container">
+      <hr />
+    </div>
     <footer>
-        <a href="https://github.com/JackHowa" target="_blank" rel="noreferrer">GitHub</a>
-        <a href="https://www.linkedin.com/in/jackhowa/" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a href="https://github.com/JackHowa" target="_blank" rel="noreferrer"
+        >GitHub</a
+      >
+      <a
+        href="https://www.linkedin.com/in/jackhowa/"
+        target="_blank"
+        rel="noreferrer"
+        >LinkedIn</a
+      >
     </footer>
   </body>
-  <amp-install-serviceworker src="/sw.js"
-                               data-iframe-src="install-sw.html"
-                               layout="nodisplay">
-    </amp-install-serviceworker>
 </html>
