@@ -1,7 +1,12 @@
-# amp-bio-landing
-Exploring amp with bio site
+# Landing Page
+Show my professional sites in minimal, accessible and performant way.
 
 ## Goals 
 
 - [x] Use the green salmon color scheme
-- [x] Use minimal ui full page
+- [x] Use minimal ui full page with 100 percent no-scroll
+
+## Commands 
+
+### Format html, json files
+`npx prettier --write .` 
