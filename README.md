@@ -1,7 +1,7 @@
 # Landing Page
 
-Show my professional sites in minimal, accessible and performant way.
-Setup on brandable jackhowa.com
+- Show my professional sites in minimal, accessible and performant way.
+- Setup on brandable jackhowa.com
 
 ## Goals
 
