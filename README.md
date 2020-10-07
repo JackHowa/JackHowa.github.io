@@ -7,16 +7,21 @@ Setup on brandable jackhowa.com
 
 - [x] Use the green salmon color scheme
 - [x] Use minimal ui full page with 100 percent no-scroll
+- [x] html, css
 
 pt 2: 
 
-- [ ] Make this a template that can be reused by someone else
+- [x] Make this a template that can be reused by someone else 
+- [x] 11ty
 - [ ] Make css as performant as possible
 - [ ] Make description a bit more readable
 - [ ] Add carbon info plugin
 
 ## Commands
 
-### Format html, json files
+- Basic 11ty commands via [example](https://github.com/11ty/eleventy-base-blog/blob/master/package.json#L5)
 
-`npx prettier --write .`
+## Tech 
+
+- 11ty 
+- nunjucks
