@@ -2,7 +2,6 @@
   "name": "jackhowa.github.io",
   "version": "1.0.0",
   "description": "Personal dev site",
-  "main": "index.js",
   "scripts": {
     "build": "eleventy",
     "watch": "eleventy --watch",
