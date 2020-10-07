@@ -1,0 +1,22 @@
+{
+  "name": "jackhowa.github.io",
+  "version": "1.0.0",
+  "description": "Personal dev site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JackHowa/JackHowa.github.io.git"
+  },
+  "author": "jackhowa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JackHowa/JackHowa.github.io/issues"
+  },
+  "homepage": "https://github.com/JackHowa/JackHowa.github.io#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.0"
+  }
+}
