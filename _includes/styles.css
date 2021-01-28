@@ -9,7 +9,6 @@ body {
 }
 
 main {
-  background-color: #113134;
   color: #fff;
   /* overscroll behavior doesn't work on safari */
   /* https://caniuse.com/#feat=css-overscroll-behavior */
