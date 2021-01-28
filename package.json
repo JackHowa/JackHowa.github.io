@@ -1,0 +1,26 @@
+{
+  "name": "jackhowa.github.io",
+  "version": "1.0.0",
+  "description": "11ty generated static site for landing page",
+  "main": "_site/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx @11ty/eleventy",
+    "start": "npm run build -- --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JackHowa/JackHowa.github.io.git"
+  },
+  "keywords": [
+    "11ty",
+    "ssg",
+    "landing-page"
+  ],
+  "author": "jackhowa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JackHowa/JackHowa.github.io/issues"
+  },
+  "homepage": "https://github.com/JackHowa/JackHowa.github.io#readme"
+}

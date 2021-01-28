@@ -16,6 +16,13 @@ Setup on brandable jackhowa.com
 
 ## Commands
 
-### Format html, json files
+### `npm run build`
 
-`npx prettier --write .`
+Outputs to _site per 11ty output. Also uses an `.eleventy.js` passthrough for other files needed for output.
+### `npm run start`
+
+Watches and serves input. Note: Do not edit `_site` files directly.
+
+## Tech
+
+- [11ty](https://www.11ty.dev/) static-site generator
