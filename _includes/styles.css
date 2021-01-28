@@ -26,12 +26,6 @@ main {
     sans-serif;
 }
 
-@media (max-width: 800px) {
-  main {
-    padding: 0 10vw 0 10vw;
-  }
-}
-
 h1 {
   font-size: 4vmax;
   margin: 0;
@@ -53,12 +47,6 @@ a:hover {
   text-decoration: underline;
 }
 
-@media (max-width: 800px) {
-  a {
-    padding: 10px;
-  }
-}
-
 #hr-container {
   padding: 2em 0 2em 0;
   margin: 0;
@@ -77,14 +65,17 @@ footer {
 }
 
 @media (max-width: 800px) {
+  main {
+    padding: 0 10vw 0 10vw;
+  }
+  a {
+    padding: 10px;
+  }
+
   footer {
     flex-direction: column;
     align-items: center;
   }
-}
-
-/* update for mobile */
-@media (max-width: 800px) {
   h1 {
     font-size: 6vmax;
   }
