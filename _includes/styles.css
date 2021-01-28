@@ -1,0 +1,99 @@
+  html,
+    body {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background-color: #113134;
+      margin: 0;
+      padding: 0;
+    }
+
+    main {
+      background-color: #113134;
+      color: #fff;
+      /* overscroll behavior doesn't work on safari */
+      /* https://caniuse.com/#feat=css-overscroll-behavior */
+      overscroll-behavior: none;
+      margin: 0;
+      padding: 0;
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 20vw 0 20vw;
+      /* system specific font */
+      font-family: -apple-system, system-ui, "Helvetica Neue", "Helvetica",
+        "Arial", sans-serif;
+    }
+
+    @media (max-width: 800px) {
+      main {
+        padding: 0 10vw 0 10vw;
+      }
+    }
+
+    h1 {
+      font-size: 4vmax;
+      margin: 0;
+    }
+
+    h2 {
+      padding-top: 0.5em;
+      font-size: 2vmax;
+      margin: 0;
+    }
+
+    a {
+      font-size: 2vmax;
+      color: #ffcfb8;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 800px) {
+      a {
+        padding: 10px;
+      }
+    }
+
+    #hr-container {
+      padding: 2em 0 2em 0;
+      margin: 0;
+    }
+
+    hr {
+      border: none;
+      border-bottom: 0.5px dashed #4a5568;
+      margin: 0;
+      padding: 0;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    @media (max-width: 800px) {
+      footer {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    /* update for mobile */
+    @media (max-width: 800px) {
+      h1 {
+        font-size: 6vmax;
+      }
+
+      h2 {
+        font-size: 3vmax;
+      }
+
+      a {
+        font-size: 3vmax;
+      }
+    }

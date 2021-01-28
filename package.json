@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/JackHowa/JackHowa.github.io/issues"
   },
-  "homepage": "https://github.com/JackHowa/JackHowa.github.io#readme"
+  "homepage": "https://github.com/JackHowa/JackHowa.github.io#readme",
+  "dependencies": {
+    "clean-css": "^4.2.3"
+  }
 }
