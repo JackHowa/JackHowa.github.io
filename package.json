@@ -8,7 +8,8 @@
     "watch": "eleventy --watch",
     "serve": "eleventy --serve",
     "start": "eleventy --serve",
-    "debug": "DEBUG=* eleventy"
+    "debug": "DEBUG=* eleventy",
+    "build:github": "eleventy --output docs"
   },
   "repository": {
     "type": "git",
