@@ -1,0 +1,26 @@
+{
+  "short_name": "Jack Howard",
+  "name": "Jack Howard | Full-Stack Developer",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#ffcfb8",
+  "background_color": "#113134",
+  "icons": [
+    {
+      "src": "./images/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./images/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "./images/maskable_icon.png",
+      "sizes": "196x196",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

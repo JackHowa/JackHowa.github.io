@@ -4,9 +4,12 @@
   "description": "11ty generated static site for landing page",
   "main": "_site/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx @11ty/eleventy",
-    "start": "npm run build -- --serve"
+    "build": "eleventy",
+    "watch": "eleventy --watch",
+    "serve": "eleventy --serve",
+    "start": "eleventy --serve",
+    "debug": "DEBUG=* eleventy",
+    "build:github": "eleventy --output docs"
   },
   "repository": {
     "type": "git",
@@ -25,5 +28,8 @@
   "homepage": "https://github.com/JackHowa/JackHowa.github.io#readme",
   "dependencies": {
     "clean-css": "^4.2.3"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.1"
   }
 }

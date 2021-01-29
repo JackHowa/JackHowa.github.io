@@ -18,7 +18,12 @@ Setup on brandable jackhowa.com
 
 ### `npm run build`
 
-Outputs to _site per 11ty output. Also uses an `.eleventy.js` passthrough for other files needed for output.
+Outputs to `\_site` per 11ty default output. Also uses an `.eleventy.js` passthrough for other files needed for output.
+
+### `npm run build:github`
+
+Outputs to docs folder per silly github pages config that allows [docs](https://docs.github.com/en/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) folder output. This is sadly also tracked in git. Visible at https://jackhowa.github.io/
+
 ### `npm run start`
 
 Watches and serves input. Note: Do not edit `_site` files directly.
