@@ -9,6 +9,7 @@ module.exports = function (eleventyConfig) {
   // copy other needed files
   eleventyConfig.addPassthroughCopy('favicon.ico')
   eleventyConfig.addPassthroughCopy('manifest.json')
+  eleventyConfig.addPassthroughCopy('icons');
 
   eleventyConfig.addFilter("cssmin", function (code) {
     return new CleanCSS({}).minify(code).styles;

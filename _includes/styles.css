@@ -69,3 +69,7 @@ footer {
   justify-content: space-around;
   flex-flow: row wrap;
 }
+
+svg {
+  fill: #ffcfb8;
+}

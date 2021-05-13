@@ -53,8 +53,14 @@ secondLinkTitle: LinkedIn
         <hr/>
       </div>
       <footer>
-        <a href="{{firstLinkURL}}" target="_blank" rel="noreferrer">{{firstLinkTitle}}</a>
-        <a href="{{secondLinkURL}}" target="_blank" rel="noreferrer">{{secondLinkTitle}}</a>
+        <a href="{{firstLinkURL}}" target="_blank" rel="noreferrer">
+          {% include "icons/github-square.svg" %}
+          {{firstLinkTitle}}
+        </a>
+        <a href="{{secondLinkURL}}" target="_blank" rel="noreferrer">
+          {% include "icons/linkedin.svg" %}
+          {{secondLinkTitle}}
+        </a>
       </footer>
     </main>
   </body>
