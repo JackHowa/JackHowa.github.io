@@ -1,18 +1,19 @@
 [build]
   publish = "_site"
   command = "npm run build"
+
 [[headers]]
-  for = "/*
-  [headers.values]  
-    Cache-Control = "no-transform"
-    Content-Security-Policy = "style-src 'self';
-    default-src 'self';
-    object-src 'none';
-    img-src https:;
-    script-src 'self'
-    'unsafe-inline';
-    frame-ancestors 'none';"
-    Upgrade-Insecure-Requests = "1"
-    X-Content-Type-Options = "nosniff"
+  # Define which paths this specific [[headers]] block will cover.
+  for = "/*"
+
+  [headers.values]
     X-Frame-Options = "DENY"
-    X-XSS-Protection = "1; mode=block""
+    X-XSS-Protection = "1; mode=block"
+    Content-Security-Policy = "frame-ancestors https://www.facebook.com"
+
+    # Multi-value headers are expressed with multi-line strings.
+	cache-control = '''
+	max-age=0,
+	no-cache,
+	no-store,
+	must-revalidate'''
