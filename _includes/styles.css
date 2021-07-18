@@ -27,31 +27,26 @@ body {
 h1 {
   font-size: 5vmax;
   margin: 0;
+  padding: 0 0 1rem 0;
 }
 
 h2 {
   font-size: 3vmax;
   margin: 0;
-  padding: 0.5em 0 1em 0;
+  padding: 0 0 1rem 0;
 }
 
 a {
-  padding: 0.5em;
+  padding: 1rem;
   font-size: 3vmax;
   color: #ffcfb8;
   text-decoration: none;
-  min-width: 300px;
+  /* min-width: 300px; */
   text-align: center;
+  border: 0.5px dashed #4a5568;
+  margin: 1rem 0;
 }
 
 a:hover {
-  text-decoration: underline;
-}
-
-footer {
-  padding: 2em 0 0 0;
-  border-top: 0.5px dashed #4a5568;
-  display: flex;
-  justify-content: space-around;
-  flex-flow: row wrap;
+  border: 0.5px dashed #ffcfb8;
 }
