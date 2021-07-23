@@ -20,6 +20,7 @@
 html {
   /* weird issues with body not encompassing all */
   background-color: var(--primary-color);
+  text-align: center;
   position: fixed;
   width: 100%;
   height: 100%;
