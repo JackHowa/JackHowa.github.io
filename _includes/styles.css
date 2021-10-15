@@ -33,9 +33,14 @@ html {
 }
 
 body {
+  margin: 0;
+  padding: 0;
+  overscroll-behavior: none;
+}
+
+main {
   /* overscroll behavior doesn't work on safari */
   /* https://caniuse.com/#feat=css-overscroll-behavior */
-  overscroll-behavior: none;
   margin: 0;
   height: 90vh;
   display: flex;
