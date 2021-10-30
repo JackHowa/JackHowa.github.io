@@ -1,19 +1,18 @@
 :root {
   --primary-color: #113134;
-  --primary-color-darker: #0d2426;
   --secondary-color: #ffcfb8;
-  --secondary-color-highlight: #ffffea;
   --text-color: #ffffff;
   --secondary-text-color: #000000;
+  --hover-brightness: 1.1;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
     --primary-color: #ffcfb8;
     --secondary-color: #113134;
-    --secondary-color-highlight: #0d2426;
     --text-color: #000000;
     --secondary-text-color: #ffffff;
+    --hover-brightness: 0.8;
   }
 }
 
@@ -22,7 +21,7 @@ html {
   background-color: var(--primary-color);
   text-align: center;
   position: fixed;
-  width: 100%;
+  width: 100%; 
   height: 100%;
   margin: 0;
   padding: 0;
@@ -75,6 +74,5 @@ a {
 }
 
 a:hover {
-  background-color: var(--secondary-color-highlight);
-  border: 1px solid var(--secondary-color-highlight);
+  filter: brightness(var(--hover-brightness));
 }
