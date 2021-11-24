@@ -4,6 +4,8 @@
   --text-color: #ffffff;
   --secondary-text-color: #000000;
   --hover-brightness: 1.1;
+  /* matches primary color in hsl */
+  --shadow-color: 185deg 82% 4%;
 }
 
 @media (prefers-color-scheme: light) {
@@ -13,6 +15,8 @@
     --text-color: #000000;
     --secondary-text-color: #ffffff;
     --hover-brightness: 0.8;
+    /* matches primary color in hsl */
+    --shadow-color: 20deg 45% 54%;
   }
 }
 
@@ -29,6 +33,25 @@ html {
   font-family: -apple-system, system-ui, "Helvetica Neue", "Helvetica", "Arial",
   sans-serif;
   color: var(--text-color);
+
+  --shadow-elevation-low:
+    0.6px 0.4px 0.8px hsl(var(--shadow-color) / 0.34),
+    1px 0.7px 1.4px -1.2px hsl(var(--shadow-color) / 0.34),
+    2.5px 1.7px 3.4px -2.5px hsl(var(--shadow-color) / 0.34);
+  /* --shadow-elevation-medium:
+    0.6px 0.4px 0.8px hsl(var(--shadow-color) / 0.36),
+    2px 1.4px 2.7px -0.8px hsl(var(--shadow-color) / 0.36),
+    5px 3.5px 6.9px -1.7px hsl(var(--shadow-color) / 0.36),
+    12.3px 8.6px 16.9px -2.5px hsl(var(--shadow-color) / 0.36); */
+  --shadow-elevation-high:
+    0.6px 0.4px 0.8px hsl(var(--shadow-color) / 0.34),
+    3.6px 2.5px 4.9px -0.4px hsl(var(--shadow-color) / 0.34),
+    6.7px 4.7px 9.2px -0.7px hsl(var(--shadow-color) / 0.34),
+    11px 7.7px 15.1px -1.1px hsl(var(--shadow-color) / 0.34),
+    17.5px 12.3px 24.1px -1.4px hsl(var(--shadow-color) / 0.34),
+    27.4px 19.3px 37.7px -1.8px hsl(var(--shadow-color) / 0.34),
+    41.7px 29.3px 57.3px -2.1px hsl(var(--shadow-color) / 0.34),
+    61.4px 43.2px 84.5px -2.5px hsl(var(--shadow-color) / 0.34);
 }
 
 body {
@@ -38,8 +61,6 @@ body {
 }
 
 main {
-  /* overscroll behavior doesn't work on safari */
-  /* https://caniuse.com/#feat=css-overscroll-behavior */
   margin: 0;
   height: 90vh;
   display: flex;
@@ -71,8 +92,11 @@ a {
   /* seems to cause the border I want via apple */
   border-radius: 980px;
   border: 1px solid var(--secondary-color);
+  /* see elevation implementation  */
+  box-shadow: var(--shadow-elevation-low);
 }
 
 a:hover {
   filter: brightness(var(--hover-brightness));
+  box-shadow: var(--shadow-elevation-high);
 }
