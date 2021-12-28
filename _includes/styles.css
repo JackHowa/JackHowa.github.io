@@ -1,23 +1,14 @@
 :root {
-  --primary-color: #113134;
-  --secondary-color: #ffcfb8;
-  --text-color: #ffffff;
-  --secondary-text-color: #000000;
-  --hover-brightness: 1.1;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --primary-color: #ffcfb8;
-    --secondary-color: #113134;
-    --text-color: #000000;
-    --secondary-text-color: #ffffff;
-    --hover-brightness: 0.8;
-  }
+  /* setting color scheme for light/dark text */
+  color-scheme: light dark;
+  --light-color: #ffcfb8;
+  --dark-color: #113134;
 }
 
 html {
-  /* weird issues with body not encompassing all */
+  --primary-color: var(--dark-color);
+  --secondary-color: var(--light-color);
+
   background-color: var(--primary-color);
   text-align: center;
   position: fixed;
@@ -28,7 +19,13 @@ html {
   /* system specific font */
   font-family: -apple-system, system-ui, "Helvetica Neue", "Helvetica", "Arial",
   sans-serif;
-  color: var(--text-color);
+}
+
+@media (prefers-color-scheme: light) {
+  html {
+    --primary-color: var(--light-color);
+    --secondary-color: var(--dark-color);
+  }
 }
 
 body {
@@ -63,16 +60,13 @@ h2 {
 a {
   padding: 1rem;
   font-size: 3vmax;
-  color: var(--secondary-text-color);
+
+  /* setting text color of links to match other canvastext */
+  color: var(--canvastext);
   text-decoration: none;
   text-align: center;
   margin: 1rem 0;
-  background-color: var(--secondary-color);
   /* seems to cause the border I want via apple */
   border-radius: 980px;
-  border: 1px solid var(--secondary-color);
-}
-
-a:hover {
-  filter: brightness(var(--hover-brightness));
+  border: 5px solid var(--secondary-color);
 }
