@@ -12,7 +12,7 @@ Setup on brandable jackhowa.com
 
 [![Lighthouse score as of Dec., 2020](https://badgen.net/badge/lighthouse/100/green/)](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fjackhowa.com)
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/ed87f432-66fe-471f-b950-e9d83e870585/deploy-status)](https://app.netlify.com/sites/jovial-meninsky-64afb0/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ed87f432-66fe-471f-b950-e9d83e870585/deploy-status)](https://app.netlify.com/sites/jackhowa-landing/deploys)
 
 ## Commands
 
