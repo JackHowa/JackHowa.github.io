@@ -1,23 +1,10 @@
-:root {
+html {
   --primary-color: #113134;
   --secondary-color: #ffcfb8;
   --text-color: #ffffff;
   --secondary-text-color: #000000;
   --hover-brightness: 1.1;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --primary-color: #ffcfb8;
-    --secondary-color: #113134;
-    --text-color: #000000;
-    --secondary-text-color: #ffffff;
-    --hover-brightness: 0.8;
-  }
-}
-
-html {
-  /* weird issues with body not encompassing all */
+  
   background-color: var(--primary-color);
   text-align: center;
   position: fixed;
@@ -29,6 +16,16 @@ html {
   font-family: -apple-system, system-ui, "Helvetica Neue", "Helvetica", "Arial",
   sans-serif;
   color: var(--text-color);
+}
+
+@media (prefers-color-scheme: light) {
+  html {
+    --primary-color: #ffcfb8;
+    --secondary-color: #113134;
+    --text-color: #000000;
+    --secondary-text-color: #ffffff;
+    --hover-brightness: 0.8;
+  }
 }
 
 body {
