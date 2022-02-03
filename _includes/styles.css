@@ -1,8 +1,3 @@
-:root {
-  /* setting color scheme for light/dark text */
-  color-scheme: light dark;
-}
-
 html {
   background-color: black;
 
@@ -40,9 +35,7 @@ a {
   /* via the picture on apple */
   background-color: #242424;
   /* setting text color of links to match other canvastext */
-  /* canvas text doesn't work on apple watch */
   color: white;
-  /* color: CanvasText; */
   text-decoration: none;
 
   /* kind of square round corner */
