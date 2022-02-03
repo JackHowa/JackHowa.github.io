@@ -4,6 +4,8 @@
 }
 
 html {
+  background-color: black;
+
   width: 100%; 
   margin: 0;
   padding: 0;
@@ -27,6 +29,7 @@ h1 {
 }
 
 h2 {
+  color: white;
   font-size: 10vmax;
   margin: 0;
   padding: 0 0 2rem 0;
@@ -39,7 +42,7 @@ a {
   /* setting text color of links to match other canvastext */
   /* canvas text doesn't work on apple watch */
   color: white;
-  color: CanvasText;
+  /* color: CanvasText; */
   text-decoration: none;
 
   /* kind of square round corner */
