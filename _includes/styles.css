@@ -35,8 +35,6 @@ body {
 }
 
 main {
-  /* overscroll behavior doesn't work on safari */
-  /* https://caniuse.com/#feat=css-overscroll-behavior */
   margin: 0;
   height: 90vh;
   display: flex;
@@ -63,7 +61,6 @@ a {
 
   /* setting text color of links to match other canvastext */
   color: var(--canvastext);
-  text-decoration: none;
   text-align: center;
   margin: 1rem 0;
   /* seems to cause the border I want via apple */
