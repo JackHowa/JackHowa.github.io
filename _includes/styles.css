@@ -60,7 +60,7 @@ a {
   font-size: 3vmax;
 
   /* setting text color of links to match other canvastext */
-  color: CanvasText;
+  color: var(--canvastext);
   text-align: center;
   margin: 1rem 0;
   /* seems to cause the border I want via apple */
