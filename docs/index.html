@@ -5,12 +5,17 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
-    <meta name="description" content="Jack Howard is a full-stack software engineer in Chicago. He has more than three years experience in React and React Native, JavaScript, and web development. Jack has developed mobile and web apps for journalism organizations, banks and private equity companies, and startups in the transportation industry. He currently works at The Washington Post&#39;s Arc XP."/>
-    <meta name="theme-color" content="#113134"/>
+    <meta name="description" content="Jack Howard is a senior full-stack software engineer. He has more than four years experience in React and React Native, JavaScript, and web development. Jack has developed mobile and web apps for journalism organizations, banks and private equity companies, and startups in the transportation industry. He works at The Washington Post&#39;s Arc XP."/>
+    <meta name="theme-color" 
+      content="#ffcfb8" 
+      media="(prefers-color-scheme: light)">
+    <meta name="theme-color" 
+      content="#113134" 
+      media="(prefers-color-scheme: dark)">
     <meta name="google-site-verification" content="Ufu6ARR8Anx86xdNZ39V76Bnp0_zo5lwVgAWNTLlmbQ"/>
     
     <style>
-      html{background-color:#113134;position:fixed;width:100%;height:100%;margin:0;padding:0;font-family:-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;color:#fff}body{overscroll-behavior:none;margin:0;height:90vh;display:flex;flex-direction:column;justify-content:center;padding:0 10vw 0 10vw}h1{font-size:5vmax;margin:0;padding:0 0 1rem 0}h2{font-size:3vmax;margin:0;padding:0 0 1rem 0}a{padding:1rem;font-size:3vmax;color:#ffcfb8;text-decoration:none;text-align:center;border:.5px dashed #4a5568;margin:1rem 0}a:hover{border:.5px dashed #ffcfb8}
+      body,html{padding:0}h1,h2{margin:0;padding:0 0 1rem}a,html{text-align:center}:root{color-scheme:light dark;--light-color:#ffcfb8;--dark-color:#113134}html{--primary-color:var(--dark-color);--secondary-color:var(--light-color);background-color:var(--primary-color);position:fixed;width:100%;height:100%;margin:0;font-family:-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif}@media (prefers-color-scheme:light){html{--primary-color:var(--light-color);--secondary-color:var(--dark-color)}}body{margin:0;overscroll-behavior:none}main{margin:0;height:90vh;display:flex;flex-direction:column;justify-content:center;padding:0 10vw}h1{font-size:5vmax}a,h2{font-size:3vmax}a{padding:1rem;color:var(--canvastext);margin:1rem 0;border-radius:980px;border:5px solid var(--secondary-color)}
     </style>
     <link rel="manifest" href="/manifest.json"/>
     <link rel="canonical" href="https://jackhowa.com"/>
@@ -18,14 +23,34 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png"/>
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png"/>
     <title>Jack Howard</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "LinkedIn Profile And Resume",
+            "item": "https://www.linkedin.com/in/jackhowa/"
+          }, {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "GitHub Code Portfolio",
+            "item": "https://github.com/JackHowa"
+          }
+        ]
+      }
+    </script>
   </head>
 
   <body>
-    <h1>Jack Howard</h1>
-    <h2>Software Engineer at Arc XP</h2>
-    <a href="https://github.com/JackHowa" target="_blank" rel="noreferrer">GitHub</a>
-    <a href="https://www.linkedin.com/in/jackhowa/" target="_blank" rel="noreferrer">LinkedIn</a>
-    <a href="http://foundation.luriechildrens.org/goto/jackhowaa" target="_blank" rel="noreferrer">Marathon Fundraising</a>
+    <main>
+      <h1>Jack Howard</h1>
+      <h2>Senior Software Engineer at Arc XP</h2>
+      <a href="https://github.com/JackHowa" target="_blank" rel="noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/jackhowa/" target="_blank" rel="noreferrer">LinkedIn</a>
+    </main>
   </body>
 
 </html>
