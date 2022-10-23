@@ -74,9 +74,5 @@ a {
 .link-inner-container {
   padding: 0.75rem;
   border-radius: 980px;
-  border: 1px solid transparent;
-}
-
-.link-inner-container:hover, .link-inner-container:focus {
   border: 1px solid var(--yellow);
 }
