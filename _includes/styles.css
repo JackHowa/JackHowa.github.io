@@ -1,8 +1,12 @@
 :root {
   /* setting color scheme for light/dark text */
   color-scheme: light dark;
-  --light-color: #ffcfb8;
-  --dark-color: #113134;
+  --light-color: white;
+  --dark-color: black;
+  /* --pink: #ed3d8e;
+  --yellow: #FFFF00;
+  --orange: #FF5733;
+  --red: #f11e1c; */
 }
 
 html {
@@ -17,8 +21,7 @@ html {
   margin: 0;
   padding: 0;
   /* system specific font */
-  font-family: -apple-system, system-ui, "Helvetica Neue", "Helvetica", "Arial",
-  sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 @media (prefers-color-scheme: light) {
@@ -65,10 +68,11 @@ a {
   margin: 1rem 0;
   /* seems to cause the border I want via apple */
   border-radius: 980px;
-  border: 5px solid var(--secondary-color);
+  background: linear-gradient(90deg, rgba(255,102,153,1) 0%, rgba(241,30,28,1) 50%, rgba(239,116,71,1) 100%);
 }
 
 a:hover, a:focus {
-  font-weight: bold;
-  border-style: dashed;
+  /* border: 2px solid var(--yellow); */
+  /* font-weight: bold; */
+  /* border-style: dashed; */
 }
