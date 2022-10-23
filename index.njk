@@ -27,7 +27,7 @@ secondLinkTitle: LinkedIn
     <meta name="generator" content="eleventy">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;800&display=swap" rel="stylesheet">
     {% set css %}
     {% include "styles.css" %}
     {% endset %}
@@ -46,8 +46,8 @@ secondLinkTitle: LinkedIn
     <main>
       <h1>{{contentTitle}}</h1>
       <h2>{{contentSubtitle}}</h2>
-      <a href="{{firstLinkURL}}" target="_blank" rel="noreferrer">{{firstLinkTitle}}</a>
-      <a href="{{secondLinkURL}}" target="_blank" rel="noreferrer">{{secondLinkTitle}}</a>
+      <a href="{{firstLinkURL}}" target="_blank" rel="noreferrer"><div class="link-inner-container">{{firstLinkTitle}}</div></a>
+      <a href="{{secondLinkURL}}" target="_blank" rel="noreferrer"><div class="link-inner-container">{{secondLinkTitle}}</div></a>
     </main>
   </body>
 

@@ -3,10 +3,10 @@
   color-scheme: light dark;
   --light-color: white;
   --dark-color: black;
-  /* --pink: #ed3d8e;
+  --pink: rgba(255,102,153,1);
   --yellow: #FFFF00;
   --orange: #FF5733;
-  --red: #f11e1c; */
+  --red: #f11e1c;
 }
 
 html {
@@ -59,20 +59,24 @@ h2 {
 }
 
 a {
-  padding: 1rem;
   font-size: 3vmax;
+  padding: 0.25rem;
 
   /* setting text color of links to match other canvastext */
-  color: var(--canvastext);
+  color: black;
   text-align: center;
   margin: 1rem 0;
   /* seems to cause the border I want via apple */
   border-radius: 980px;
-  background: linear-gradient(90deg, rgba(255,102,153,1) 0%, rgba(241,30,28,1) 50%, rgba(239,116,71,1) 100%);
+  background-color: var(--pink);
 }
 
-a:hover, a:focus {
-  /* border: 2px solid var(--yellow); */
-  /* font-weight: bold; */
-  /* border-style: dashed; */
+.link-inner-container {
+  padding: 0.75rem;
+  border-radius: 980px;
+  border: 1px solid transparent;
+}
+
+.link-inner-container:hover, .link-inner-container:focus {
+  border: 1px solid var(--yellow);
 }
