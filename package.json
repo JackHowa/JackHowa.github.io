@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "11ty generated static site for landing page",
   "main": "_site/index.html",
+  "type": "module",
   "scripts": {
     "build": "eleventy",
     "start": "eleventy --serve",
@@ -27,6 +28,6 @@
     "clean-css": "^5.3.3"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1"
+    "@11ty/eleventy": "3.0.0-alpha.10"
   }
 }
