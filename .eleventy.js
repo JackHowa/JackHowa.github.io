@@ -1,14 +1,14 @@
-const CleanCSS = require("clean-css");
+import CleanCSS from "clean-css";
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
   // Output directory: _site
 
   // Copy `images/` to `_site/images`
   eleventyConfig.addPassthroughCopy('images');
 
   // copy other needed files
-  eleventyConfig.addPassthroughCopy('favicon.ico')
-  eleventyConfig.addPassthroughCopy('manifest.json')
+  eleventyConfig.addPassthroughCopy('favicon.ico');
+  eleventyConfig.addPassthroughCopy('manifest.json');
 
   eleventyConfig.addFilter("cssmin", function (code) {
     const output = new CleanCSS({
@@ -20,7 +20,7 @@ module.exports = function (eleventyConfig) {
       }
     }).minify(code);
 
-    console.log('******css min perf*******')
+    console.log('******css min perf*******');
 
     console.log('original size', output.stats.originalSize); // original content size after import inlining
     console.log('minified size', output.stats.minifiedSize); // optimized content size
