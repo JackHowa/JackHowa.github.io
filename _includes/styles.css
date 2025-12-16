@@ -6,9 +6,9 @@
 
 :root {
   color-scheme: light dark;
-  --md-primary: #6750a4;
-  --md-primary-light: #8777b9;
-  --md-primary-dark: #4f3c89;
+  --md-primary: #ea6a00;
+  --md-primary-light: #ff8a33;
+  --md-primary-dark: #b85200;
   --md-surface: #ffffff;
   --md-surface-container: #f3edf7;
   --md-surface-container-high: #ece6f0;
@@ -263,9 +263,9 @@ a:active {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --md-primary: #d0bcff;
-    --md-primary-light: #eaddff;
-    --md-primary-dark: #9a82db;
+    --md-primary: #ffb68a;
+    --md-primary-light: #ffd0b0;
+    --md-primary-dark: #ea6a00;
     --md-surface: #1c1b1f;
     --md-surface-container: #211f26;
     --md-surface-container-high: #2b2930;
@@ -273,7 +273,7 @@ a:active {
     --md-on-surface-variant: #cac4d0;
     --md-outline: #938f99;
     --md-background: #141218;
-    --md-on-primary: #381e72;
+    --md-on-primary: #4a2800;
   }
 
   .theme-picker {
