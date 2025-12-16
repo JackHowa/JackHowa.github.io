@@ -1,74 +1,322 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
-  /* setting color scheme for light/dark text */
   color-scheme: light dark;
-  --light-color: #ffcfb8;
-  --dark-color: #113134;
+  --md-primary: #6750a4;
+  --md-primary-light: #8777b9;
+  --md-primary-dark: #4f3c89;
+  --md-surface: #ffffff;
+  --md-surface-container: #f3edf7;
+  --md-surface-container-high: #ece6f0;
+  --md-on-surface: #1c1b1f;
+  --md-on-surface-variant: #49454f;
+  --md-outline: #79747e;
+  --md-background: #fef7ff;
 }
 
 html {
-  --primary-color: var(--dark-color);
-  --secondary-color: var(--light-color);
-
-  background-color: var(--primary-color);
-  text-align: center;
-  position: fixed;
-  width: 100%; 
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  /* system specific font */
-  font-family: -apple-system, system-ui, "Helvetica Neue", "Helvetica", "Arial",
-  sans-serif;
-}
-
-@media (prefers-color-scheme: light) {
-  html {
-    --primary-color: var(--light-color);
-    --secondary-color: var(--dark-color);
-  }
+  font-family: 'Roboto', -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: var(--md-background);
+  min-height: 100vh;
+  transition: background 0.3s ease;
 }
 
 body {
-  margin: 0;
-  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
   overscroll-behavior: none;
 }
 
-main {
-  margin: 0;
-  height: 90vh;
+.theme-picker {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--md-surface-container-high);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  max-width: 200px;
+  transform: translateX(0);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+  opacity: 1;
+}
+
+.theme-picker.hidden {
+  transform: translateX(calc(100% + 20px));
+  opacity: 0;
+  pointer-events: none;
+}
+
+.theme-fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  background: var(--md-primary);
+  border: none;
+  border-radius: 16px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.3);
+  z-index: 999;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  padding: 0 10vw 0 10vw;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 24px;
+}
+
+.theme-fab:hover {
+  background: var(--md-primary-light);
+  box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.theme-fab:active {
+  transform: scale(0.95);
+}
+
+.theme-fab .material-icons {
+  font-size: 24px;
+}
+
+.theme-picker h3 {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--md-on-surface);
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.color-input-group {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.color-input {
+  width: 48px;
+  height: 48px;
+  border: 2px solid #e0e0e0;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.color-input:hover {
+  transform: scale(1.1);
+}
+
+.color-label {
+  font-size: 12px;
+  color: var(--md-on-surface-variant);
+}
+
+.preset-label {
+  font-size: 11px;
+  color: var(--md-outline);
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.preset-colors {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.preset-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.preset-btn:hover {
+  transform: scale(1.15);
+}
+
+main {
+  width: 100%;
+  max-width: 480px;
+  background: var(--md-surface);
+  border-radius: 28px;
+  padding: 48px 32px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 6px 2px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.avatar {
+  width: 88px;
+  height: 88px;
+  background: var(--md-primary);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 24px;
+  transition: background 0.3s ease;
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.15);
 }
 
 h1 {
-  font-size: 5vmax;
-  margin: 0;
-  padding: 0 0 1rem 0;
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--md-on-surface);
+  letter-spacing: 0;
+  margin-bottom: 8px;
 }
 
 h2 {
-  font-size: 3vmax;
-  margin: 0;
-  padding: 0 0 1rem 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--md-on-surface-variant);
+  margin-bottom: 32px;
+  line-height: 24px;
 }
 
 a {
-  padding: 1rem;
-  font-size: 3vmax;
-
-  /* setting text color of links to match other canvastext */
-  color: var(--canvastext);
-  text-align: center;
-  margin: 1rem 0;
-  /* seems to cause the border I want via apple */
-  border-radius: 980px;
-  border: 5px solid var(--secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  height: 56px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
+  margin-bottom: 12px;
 }
 
-a:hover, a:focus {
-  font-weight: bold;
-  border-style: dashed;
+a:first-of-type {
+  background: var(--md-primary);
+  color: white;
+  border: none;
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+a:first-of-type:hover,
+a:first-of-type:focus {
+  background: var(--md-primary-light);
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.15), 0 2px 6px 2px rgba(0, 0, 0, 0.15);
+}
+
+a:last-of-type {
+  background: transparent;
+  color: var(--md-primary);
+  border: 1px solid var(--md-outline);
+}
+
+a:last-of-type:hover,
+a:last-of-type:focus {
+  background: rgba(103, 80, 164, 0.08);
+}
+
+a:active {
+  transform: scale(0.98);
+}
+
+.material-icons {
+  font-size: 18px;
+}
+
+@media (max-width: 640px) {
+  .theme-picker {
+    top: 10px;
+    right: 10px;
+    padding: 12px;
+  }
+
+  .theme-fab {
+    bottom: 16px;
+    right: 16px;
+  }
+
+  main {
+    padding: 40px 24px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --md-primary: #d0bcff;
+    --md-primary-light: #eaddff;
+    --md-primary-dark: #9a82db;
+    --md-surface: #1c1b1f;
+    --md-surface-container: #211f26;
+    --md-surface-container-high: #2b2930;
+    --md-on-surface: #e6e1e5;
+    --md-on-surface-variant: #cac4d0;
+    --md-outline: #938f99;
+    --md-background: #141218;
+  }
+
+  .theme-picker {
+    background: var(--md-surface-container-high);
+  }
+
+  .theme-picker h3 {
+    color: var(--md-on-surface);
+  }
+
+  .color-label {
+    color: var(--md-on-surface-variant);
+  }
+
+  .preset-label {
+    color: var(--md-outline);
+  }
+
+  .theme-fab {
+    background: var(--md-primary);
+    color: #381e72;
+  }
+
+  .theme-fab:hover {
+    background: var(--md-primary-light);
+  }
+
+  main {
+    background: var(--md-surface);
+  }
+
+  h1 {
+    color: var(--md-on-surface);
+  }
+
+  h2 {
+    color: var(--md-on-surface-variant);
+  }
+
+  a:first-of-type {
+    background: var(--md-primary);
+    color: #381e72;
+  }
+
+  a:last-of-type {
+    color: var(--md-primary);
+  }
 }
