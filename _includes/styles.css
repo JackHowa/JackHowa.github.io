@@ -19,7 +19,7 @@
 }
 
 html {
-  font-family: 'Roboto', -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
   background: var(--md-background);
   min-height: 100vh;
   transition: background 0.3s ease;
