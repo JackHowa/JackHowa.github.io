@@ -124,7 +124,7 @@ body {
 
 .preset-label {
   font-size: 11px;
-  color: var(--md-outline);
+  color: var(--md-on-surface-variant);
   margin-bottom: 8px;
   text-align: left;
 }

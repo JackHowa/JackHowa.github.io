@@ -47,7 +47,7 @@ secondLinkTitle: AI & React talk
       <h3>Theme Color</h3>
       <div class="color-input-group">
         <input type="color" id="colorPicker" class="color-input" value="#6750a4">
-        <span class="color-label">Pick</span>
+        <span class="color-label">Pick Any Color 🌈</span>
       </div>
       <div class="preset-label">Presets:</div>
       <div class="preset-colors">
@@ -135,11 +135,11 @@ secondLinkTitle: AI & React talk
             primary: baseColor,
             primaryLight: `hsl(${hsl.h}, ${hsl.s}%, ${Math.min(lightness + 15, 85)}%)`,
             primaryDark: `hsl(${hsl.h}, ${hsl.s}%, ${Math.max(lightness - 15, 15)}%)`,
-            background: `hsl(${hsl.h}, ${Math.min(hsl.s * 0.8, 100)}%, 99%)`,
-            surface: '#ffffff',
-            surfaceContainer: `hsl(${hsl.h}, ${Math.min(hsl.s * 0.6, 100)}%, 96%)`,
-            surfaceContainerHigh: `hsl(${hsl.h}, ${Math.min(hsl.s * 0.6, 100)}%, 94%)`,
-            outlinedHover: `hsla(${hsl.h}, ${hsl.s}%, ${lightness}%, 0.08)`
+            background: `hsl(${hsl.h}, ${Math.min(hsl.s * 1.2, 100)}%, 95%)`,
+            surface: `hsl(${hsl.h}, ${Math.min(hsl.s * 0.6, 100)}%, 95%)`,
+            surfaceContainer: `hsl(${hsl.h}, ${Math.min(hsl.s * 0.8, 100)}%, 92%)`,
+            surfaceContainerHigh: `hsl(${hsl.h}, ${Math.min(hsl.s * 0.8, 100)}%, 88%)`,
+            outlinedHover: `hsla(${hsl.h}, ${hsl.s}%, ${lightness}%, 0.12)`
           };
         }
       }
@@ -203,6 +203,11 @@ secondLinkTitle: AI & React talk
       });
 
       applyTheme(colorPicker.value);
+
+      // Re-apply theme when system color scheme changes
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+        applyTheme(colorPicker.value);
+      });
 	  </script>
   </body>
 
