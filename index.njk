@@ -120,15 +120,19 @@ secondLinkTitle: AI & React talk
         const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
         if (isDark) {
+          const primaryL = Math.min(lightness + 40, 90);
           return {
-            primary: `hsl(${hsl.h}, ${hsl.s}%, ${Math.min(lightness + 40, 90)}%)`,
+            primary: `hsl(${hsl.h}, ${hsl.s}%, ${primaryL}%)`,
             primaryLight: `hsl(${hsl.h}, ${Math.min(hsl.s + 10, 100)}%, ${Math.min(lightness + 50, 95)}%)`,
             primaryDark: `hsl(${hsl.h}, ${hsl.s}%, ${Math.min(lightness + 20, 75)}%)`,
             background: `hsl(${hsl.h}, ${Math.max(hsl.s - 30, 10)}%, 8%)`,
             surface: `hsl(${hsl.h}, ${Math.max(hsl.s - 20, 10)}%, 11%)`,
             surfaceContainer: `hsl(${hsl.h}, ${Math.max(hsl.s - 20, 10)}%, 13%)`,
             surfaceContainerHigh: `hsl(${hsl.h}, ${Math.max(hsl.s - 20, 10)}%, 17%)`,
-            outlinedHover: `hsla(${hsl.h}, ${hsl.s}%, ${lightness + 40}%, 0.08)`
+            outlinedHover: `hsla(${hsl.h}, ${hsl.s}%, ${lightness + 40}%, 0.08)`,
+            // If primary lightness > 60%, uses dark text (same hue at 20% lightness)
+            // Otherwise uses white text
+            onPrimary: primaryL > 60 ? `hsl(${hsl.h}, ${hsl.s}%, 20%)` : '#ffffff'
           };
         } else {
           return {
@@ -139,7 +143,8 @@ secondLinkTitle: AI & React talk
             surface: `hsl(${hsl.h}, ${Math.min(hsl.s * 0.6, 100)}%, 95%)`,
             surfaceContainer: `hsl(${hsl.h}, ${Math.min(hsl.s * 0.8, 100)}%, 92%)`,
             surfaceContainerHigh: `hsl(${hsl.h}, ${Math.min(hsl.s * 0.8, 100)}%, 88%)`,
-            outlinedHover: `hsla(${hsl.h}, ${hsl.s}%, ${lightness}%, 0.12)`
+            outlinedHover: `hsla(${hsl.h}, ${hsl.s}%, ${lightness}%, 0.12)`,
+            onPrimary: lightness > 60 ? `hsl(${hsl.h}, ${hsl.s}%, 20%)` : '#ffffff'
           };
         }
       }
@@ -155,6 +160,7 @@ secondLinkTitle: AI & React talk
         root.style.setProperty('--md-surface', scheme.surface);
         root.style.setProperty('--md-surface-container', scheme.surfaceContainer);
         root.style.setProperty('--md-surface-container-high', scheme.surfaceContainerHigh);
+        root.style.setProperty('--md-on-primary', scheme.onPrimary);
 
         document.body.parentElement.style.background = scheme.background;
 

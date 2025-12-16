@@ -16,6 +16,7 @@
   --md-on-surface-variant: #49454f;
   --md-outline: #79747e;
   --md-background: #fef7ff;
+  --md-on-primary: #ffffff;
 }
 
 html {
@@ -169,7 +170,7 @@ main {
   justify-content: center;
   font-size: 40px;
   font-weight: 500;
-  color: white;
+  color: var(--md-on-primary);
   margin-bottom: 24px;
   transition: background 0.3s ease;
   box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.15);
@@ -209,7 +210,7 @@ a {
 
 a:first-of-type {
   background: var(--md-primary);
-  color: white;
+  color: var(--md-on-primary);
   border: none;
   box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.3);
 }
@@ -272,6 +273,7 @@ a:active {
     --md-on-surface-variant: #cac4d0;
     --md-outline: #938f99;
     --md-background: #141218;
+    --md-on-primary: #381e72;
   }
 
   .theme-picker {
@@ -313,7 +315,7 @@ a:active {
 
   a:first-of-type {
     background: var(--md-primary);
-    color: #381e72;
+    color: var(--md-on-primary);
   }
 
   a:last-of-type {
