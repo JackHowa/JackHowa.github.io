@@ -8,6 +8,7 @@ metaCanonicalURL: "https://jackhowa.com"
 
 # content
 contentTitle: Jack Howard
+contentTitleAbbreviation: JH
 contentSubtitle: Principal Software Engineer at Expel
 firstLinkURL: https://github.com/JackHowa
 firstLinkTitle: GitHub
@@ -40,12 +41,183 @@ secondLinkTitle: AI & React talk
   </head>
 
   <body>
+    <button class="theme-fab" id="themeFab" aria-label="Toggle theme picker">🎨</button>
+
+    <div class="theme-picker hidden" id="themePicker">
+      <h3>Theme Color</h3>
+      <div class="color-input-group">
+        <input type="color" id="colorPicker" class="color-input" value="#ea6a00">
+
+        <span class="color-label">Pick Any Color 🌈</span>
+      </div>
+      <div class="preset-label">Presets:</div>
+      <div class="preset-colors">
+        <button class="preset-btn" style="background: #6750a4;" data-color="#6750a4" aria-label="Violet"
+          title="Violet (MD3 Default)"></button>
+        <button class="preset-btn" style="background: #006a6a;" data-color="#006a6a" aria-label="Teal"
+          title="Teal"></button>
+        <button class="preset-btn" style="background: #0061a4;" data-color="#0061a4" aria-label="Blue"
+          title="Blue"></button>
+        <button class="preset-btn" style="background: #984061;" data-color="#984061" aria-label="Rose"
+          title="Rose"></button>
+        <button class="preset-btn" style="background: #386a20;" data-color="#386a20" aria-label="Green"
+          title="Green"></button>
+        <button class="preset-btn" style="background: #a05c00;" data-color="#ea6a00" aria-label="Orange"
+          title="Orange"></button>
+
+          {# this is via the orange begonia #}
+        <button class="preset-btn" style="background: #ba1a1a;" data-color="#ba1a1a" aria-label="Red"
+          title="Red"></button>
+        <button class="preset-btn" style="background: #49454f;" data-color="#49454f" aria-label="Neutral"
+          title="Neutral Gray"></button>
+      </div>
+    </div>
+
     <main>
+      <div class="avatar">{{contentTitleAbbreviation}}</div>
       <h1>{{contentTitle}}</h1>
       <h2>{{contentSubtitle}}</h2>
       <a href="{{firstLinkURL}}" target="_blank" rel="noreferrer">{{firstLinkTitle}}</a>
       <a href="{{secondLinkURL}}" target="_blank" rel="noreferrer">{{secondLinkTitle}}</a>
     </main>
+
+    <script>
+      function hexToRgb(hex) {
+        const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        return result ? {
+          r: parseInt(result[1], 16),
+          g: parseInt(result[2], 16),
+          b: parseInt(result[3], 16)
+        } : null;
+      }
+
+      function rgbToHsl(r, g, b) {
+        r /= 255;
+        g /= 255;
+        b /= 255;
+        const max = Math.max(r, g, b);
+        const min = Math.min(r, g, b);
+        let h, s, l = (max + min) / 2;
+
+        if (max === min) {
+          h = s = 0;
+        } else {
+          const d = max - min;
+          s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+          switch (max) {
+            case r: h = ((g - b) / d + (g < b ? 6 : 0)) / 6; break;
+            case g: h = ((b - r) / d + 2) / 6; break;
+            case b: h = ((r - g) / d + 4) / 6; break;
+          }
+        }
+
+        return { h: h * 360, s: s * 100, l: l * 100 };
+      }
+
+      function generateColorScheme(baseColor) {
+        const rgb = hexToRgb(baseColor);
+        const hsl = rgbToHsl(rgb.r, rgb.g, rgb.b);
+
+        // Generate tonal palette (MD3 approach)
+        const lightness = hsl.l;
+        const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (isDark) {
+          const primaryL = Math.min(lightness + 40, 90);
+          return {
+            primary: `hsl(${hsl.h}, ${hsl.s}%, ${primaryL}%)`,
+            primaryLight: `hsl(${hsl.h}, ${Math.min(hsl.s + 10, 100)}%, ${Math.min(lightness + 50, 95)}%)`,
+            primaryDark: `hsl(${hsl.h}, ${hsl.s}%, ${Math.min(lightness + 20, 75)}%)`,
+            background: `hsl(${hsl.h}, ${Math.max(hsl.s - 30, 10)}%, 8%)`,
+            surface: `hsl(${hsl.h}, ${Math.max(hsl.s - 20, 10)}%, 11%)`,
+            surfaceContainer: `hsl(${hsl.h}, ${Math.max(hsl.s - 20, 10)}%, 13%)`,
+            surfaceContainerHigh: `hsl(${hsl.h}, ${Math.max(hsl.s - 20, 10)}%, 17%)`,
+            outlinedHover: `hsla(${hsl.h}, ${hsl.s}%, ${lightness + 40}%, 0.08)`,
+            // If primary lightness > 60%, uses dark text (same hue at 20% lightness)
+            // Otherwise uses white text
+            onPrimary: primaryL > 60 ? `hsl(${hsl.h}, ${hsl.s}%, 20%)` : '#ffffff'
+          };
+        } else {
+          return {
+            primary: baseColor,
+            primaryLight: `hsl(${hsl.h}, ${hsl.s}%, ${Math.min(lightness + 15, 85)}%)`,
+            primaryDark: `hsl(${hsl.h}, ${hsl.s}%, ${Math.max(lightness - 15, 15)}%)`,
+            background: `hsl(${hsl.h}, ${Math.min(hsl.s * 1.2, 100)}%, 95%)`,
+            surface: `hsl(${hsl.h}, ${Math.min(hsl.s * 0.6, 100)}%, 95%)`,
+            surfaceContainer: `hsl(${hsl.h}, ${Math.min(hsl.s * 0.8, 100)}%, 92%)`,
+            surfaceContainerHigh: `hsl(${hsl.h}, ${Math.min(hsl.s * 0.8, 100)}%, 88%)`,
+            outlinedHover: `hsla(${hsl.h}, ${hsl.s}%, ${lightness}%, 0.12)`,
+            onPrimary: lightness > 60 ? `hsl(${hsl.h}, ${hsl.s}%, 20%)` : '#ffffff'
+          };
+        }
+      }
+
+      function applyTheme(color) {
+        const scheme = generateColorScheme(color);
+        const root = document.documentElement;
+
+        root.style.setProperty('--md-primary', scheme.primary);
+        root.style.setProperty('--md-primary-light', scheme.primaryLight);
+        root.style.setProperty('--md-primary-dark', scheme.primaryDark);
+        root.style.setProperty('--md-background', scheme.background);
+        root.style.setProperty('--md-surface', scheme.surface);
+        root.style.setProperty('--md-surface-container', scheme.surfaceContainer);
+        root.style.setProperty('--md-surface-container-high', scheme.surfaceContainerHigh);
+        root.style.setProperty('--md-on-primary', scheme.onPrimary);
+
+        document.body.parentElement.style.background = scheme.background;
+
+        const avatar = document.querySelector('.avatar');
+        if (avatar) {
+          avatar.style.background = scheme.primary;
+        }
+
+        const links = document.querySelectorAll('a');
+        if (links[1]) {
+          links[1].addEventListener('mouseenter', function () {
+            this.style.background = scheme.outlinedHover;
+          });
+          links[1].addEventListener('mouseleave', function () {
+            this.style.background = 'transparent';
+          });
+        }
+      }
+
+      // Theme picker toggle
+      const themeFab = document.getElementById('themeFab');
+      const themePicker = document.getElementById('themePicker');
+
+      themeFab.addEventListener('click', () => {
+        themePicker.classList.toggle('hidden');
+      });
+
+      // Close picker when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!themePicker.contains(e.target) && !themeFab.contains(e.target)) {
+          themePicker.classList.add('hidden');
+        }
+      });
+
+      const colorPicker = document.getElementById('colorPicker');
+      colorPicker.addEventListener('input', (e) => {
+        applyTheme(e.target.value);
+      });
+
+      document.querySelectorAll('.preset-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const color = btn.dataset.color;
+          colorPicker.value = color;
+          applyTheme(color);
+        });
+      });
+
+      applyTheme(colorPicker.value);
+
+      // Re-apply theme when system color scheme changes
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+        applyTheme(colorPicker.value);
+      });
+	  </script>
   </body>
 
 </html>
