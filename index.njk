@@ -31,6 +31,21 @@ secondLinkTitle: AI & React talk
     <style>
       {{css | cssmin | safe}}
     </style>
+    <meta property="og:site_name" content="{{metaTitle}}"/>
+    <meta property="og:title" content="{{metaTitle}}"/>
+    <meta property="og:description" content="{{metaDescription}}"/>
+    <meta property="og:url" content="{{metaCanonicalURL}}"/>
+    <meta property="og:type" content="profile"/>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "{{metaTitle}}",
+      "url": "{{metaCanonicalURL}}",
+      "jobTitle": "{{contentSubtitle}}",
+      "sameAs": ["{{firstLinkURL}}"]
+    }
+    </script>
     <link rel="manifest" href="/manifest.json"/>
     <link rel="canonical" href="{{metaCanonicalURL}}"/>
     <link rel="apple-touch-icon" href="/images/apple-touch-icon.png"/>
