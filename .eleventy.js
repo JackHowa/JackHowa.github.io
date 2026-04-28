@@ -9,6 +9,8 @@ export default function (eleventyConfig) {
   // copy other needed files
   eleventyConfig.addPassthroughCopy('favicon.ico');
   eleventyConfig.addPassthroughCopy('manifest.json');
+  eleventyConfig.addPassthroughCopy('robots.txt');
+  eleventyConfig.addPassthroughCopy('sitemap.xml');
 
   eleventyConfig.addFilter("cssmin", function (code) {
     const output = new CleanCSS({
