@@ -18,3 +18,12 @@
     no-cache,
     no-store,
     must-revalidate'''
+
+[[headers]]
+  for = "/"
+
+  [headers.values]
+    Link = '''
+    </robots.txt>; rel="robots",
+    </sitemap.xml>; rel="sitemap",
+    </.well-known/agent-skills/index.json>; rel="describedby"'''
