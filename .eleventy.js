@@ -11,6 +11,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('manifest.json');
   eleventyConfig.addPassthroughCopy('robots.txt');
   eleventyConfig.addPassthroughCopy('sitemap.xml');
+  eleventyConfig.addPassthroughCopy('.well-known');
 
   eleventyConfig.addFilter("cssmin", function (code) {
     const output = new CleanCSS({

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "profile",
+      "type": "skill-md",
+      "description": "Public profile information for Jack Howard, principal full-stack software engineer.",
+      "url": "https://jackhowa.com/.well-known/agent-skills/profile.md",
+      "digest": "sha256:06d770a279dc3d1c412f0423f2b89e9c4642306d10d61038f650dd5ea212ce26"
+    }
+  ]
+}
